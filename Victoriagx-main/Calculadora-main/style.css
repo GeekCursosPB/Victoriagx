@@ -1,0 +1,16 @@
+
+
+#operando1 {
+    padding: 20px 40px;
+    border-radius: 50px;
+    justify-content:center ;
+    padding-left: 100px;
+    align-items: baseline;
+}
+
+#simbolo {
+    padding: 20px 40px;
+    background-color: aliceblue;
+    position: relative;
+    justify-items: center;
+}

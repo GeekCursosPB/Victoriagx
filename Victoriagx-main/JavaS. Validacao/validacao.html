@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco | Tudo Vende | Casa de Variedades</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="css/login.css" rel="stylesheet">
+</head>
+
+<body>
+    <form class="from-signin">
+
+    <h2 class="text-center">Acessar minha conta</h2>
+    <input onketup="validarCampos()" type="text" id="senha" class="form-control" placeholder="Usuário">
+    <input onketup="validarCampos()" type="password" id="senha" class="form-control" placeholder="Senha">
+
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" > Salvar meus dados de acesso
+        </label>
+    </div>
+        <a id="botão-entrar" class="btn btn-lg btn-primary btn-block" href="javascript:entrar()">Entrar</a>
+    </form>
+    <script type="text/javascript">
+        var camposValidos = false;
+
+        var usuarios = [
+            {
+                email:"admin@admin.com",
+                senha:"admin123"
+            }
+        ];
+
+        const campoUsuario = document.getElementById('usuario');
+        const campoSenha = document.getElementBtId('senha');
+
+        function validarCampos(){
+            if (campoUsuario.value.length >=4 && campoSenha.value.length >=6){
+                camposValidos = true;
+            } else {
+                camposValidos = false;
+            }
+        }
+
+        function entrar() {
+            if(!camposValidos) {
+                alert("Preencha corretamente as credenciais de acesso");
+            } else {
+                for(usuario of usuarios) {
+                    if(usuario.email == campoUsuario.value && usuario.senha == campoSenha.value) {
+                        window.location = "cadastro.html";
+                    } else {
+                        alert("Usuário não encontrado, verifique as credenciais e tente novamente!");
+                    }
+                }
+            }
+        }
+
+        window.onload = function() {
+            validar.Campos();
+        }
+    </script>
+</body>
+</html>
